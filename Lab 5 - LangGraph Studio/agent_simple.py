@@ -8,11 +8,7 @@ from langchain.agents import create_agent
 def rag_search_opt(query: str) -> str:
     """Recherche des informations dans le texte."""
     results = (
-        "Le personnage principale est un jeune homme nommé Jack, "
-        "qui découvre un ancien artefact magique. "
-        "Cet artefact lui confère des pouvoirs extraordinaires mais attire également "
-        "des ennemis redoutables. Jack devra apprendre à maîtriser ses nouveaux pouvoirs "
-        "tout en protégeant ses proches."
+        "Le personnage principale est un jeune homme nommé Jack, qui découvre un ancien artefact magique. "
     )
     return results
 
