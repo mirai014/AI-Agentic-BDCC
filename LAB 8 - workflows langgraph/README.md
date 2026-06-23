@@ -56,9 +56,13 @@ Commande :
 
 composants à installer : 
 >uv init
+
 >uv venv
+
 >.venv\Scripts\activate
+
 >uv add langgraph
+
 >uv add ipython
 
 pour exécuter: 
