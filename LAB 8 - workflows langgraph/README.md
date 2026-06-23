@@ -51,3 +51,20 @@ Commande :
 * LangChain Core
 * uv 
 * IPython 
+
+## en résumé : 
+
+composants à installer : 
+>uv init
+>uv venv
+>.venv\Scripts\activate
+>uv add langgraph
+>uv add ipython
+
+pour exécuter: 
+uv run --active python hello_graph.py
+uv run --active python workflows/two_step_workflow.py
+uv run --active python reducers_demo.py
+uv run --active python message_state.py
+uv run --active python conditional_workflow.py
+uv run --active python workflow_loop.py
