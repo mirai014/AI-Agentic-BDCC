@@ -1,13 +1,3 @@
-# TP : Multi-Agents en LangChain
-#
-# Architecture hiérarchique :
-#   main_agent ──tool──► call_subagent_1 ──► subagent_1 (square_root)
-#              └─tool──► call_subagent_2 ──► subagent_2 (square)
-#
-# Chaque sous-agent est un agent LangChain à part entière, exposé au
-# main_agent comme un simple @tool — le main_agent décide lui-même
-# quel sous-agent appeler en fonction de la question posée.
-
 from langchain.agents import create_agent
 from langchain.messages import HumanMessage
 from langchain.tools import tool
@@ -15,10 +5,7 @@ from langchain_ollama import ChatOllama
 
 model = ChatOllama(model="llama3.2:3b", temperature=0)
 
-# ============================================================
 # PARTIE 1 : Définition des outils
-# ============================================================
-
 
 @tool
 def square_root(x: float) -> float:
@@ -31,18 +18,12 @@ def square(x: float) -> float:
     """Calculate the square of a number"""
     return x**2
 
-
-# ============================================================
 # PARTIE 2 : Création des sous-agents
-# ============================================================
 
 subagent_1 = create_agent(model=model, tools=[square_root])
 subagent_2 = create_agent(model=model, tools=[square])
 
-
-# ============================================================
 # PARTIE 3 : Créer l'agent principal
-# ============================================================
 
 
 @tool
@@ -69,11 +50,7 @@ main_agent = create_agent(
     ),
 )
 
-
-# ============================================================
 # PARTIE 4 : Appeler les agents et afficher le résultat
-# ============================================================
-
 if __name__ == "__main__":
     question_1 = "What is the square root of 456?"
     response_1 = main_agent.invoke({"messages": [HumanMessage(content=question_1)]})
