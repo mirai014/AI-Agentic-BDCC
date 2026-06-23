@@ -50,7 +50,7 @@ async def main():
         {"messages": [question]},
         config=config
     )
-    '''
+   
  # 5. Affichage forcé du résultat
     print("\n================ RÉPONSE DE L'AGENT ================")
     print(response['messages'][-1].content)
@@ -58,14 +58,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-     '''
-
-# 5. Question ultra-précise pour forcer l'affichage de vraies infos textuelles
-    config = {"configurable": {"thread_id": "1"}}
-    question = HumanMessage(
-        content=(
-            "Give me direct flights from Rabat to Agadir for 25/08/2026. "
-            "Do not write Python code. Do not explain the JSON structure. "
-            "Just give me the available flight times, flight numbers, and prices in plain text."
-        )
-    )
