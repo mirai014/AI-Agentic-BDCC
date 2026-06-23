@@ -1,0 +1,19 @@
+[project]
+name = "lab7-agent-hitl"
+version = "0.1.0"
+description = "TP 7 : Conception d'un agent Human-In-The-Loop (HITL) avec LangChain et LangGraph"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Ton Nom", email = "ton.email@example.com" }
+]
+dependencies = [
+    "langchain>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langgraph>=0.2.0",
+    "langchain-ollama>=0.2.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
