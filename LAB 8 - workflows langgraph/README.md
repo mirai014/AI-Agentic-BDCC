@@ -2,10 +2,10 @@
 Préréquis : 
 Assurez-vous d'avoir Python (version 3.12 ou supérieure) et uv installés sur votre machine.Initialisation de l'environnement.Activer l'environnement virtuel :
 > .venv\\Scripts\\activate
-Installer les dépendances requises :
+# Installer les dépendances requises :
 Les dépendances nécessaires au bon fonctionnement de l'ensemble des scripts de ce laboratoire sont :
 > uv add langgraph langchain-core ipython
-🚀 Détail des Parties & Commandes d'Exécution :
+# 🚀 Détail des Parties & Commandes d'Exécution :
 Tous les scripts s'exécutent via l'environnement actif avec la commande 
 >uv run --active python <chemin_du_fichier>.
 ## PARTIE 1 : 
@@ -47,7 +47,7 @@ Commande :
 >uv run --active python workflows/workflow_loop.py
 
 📊 Technologies utilisées: 
-LangGraph 
-LangChain Core
-uv 
-IPython 
+* LangGraph 
+* LangChain Core
+* uv 
+* IPython 
