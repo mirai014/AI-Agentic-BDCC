@@ -1,0 +1,29 @@
+Problème de Connexion Réseau (Pas d'accès Internet) :
+1. Vérifier si le câble Ethernet est bien branché ou si le Wi-Fi est activé.
+2. Si le statut affiche "Connecté, pas d'accès Internet", il faut renouveler l'adresse IP. Pour cela, ouvrir l'invite de commande (cmd) et taper : ipconfig /release puis ipconfig /renew.
+3. Si le problème persiste, vider le cache DNS avec la commande : ipconfig /flushdns.
+4. En cas d'échec total, un redémarrage du routeur ou de la box réseau est nécessaire.
+
+Problème d'Impression (L'imprimante ne répond pas) :
+1. Vérifier que l'imprimante est sous tension et connectée au même réseau que l'ordinateur.
+2. Une cause fréquente est le blocage de la file d'attente d'impression. Pour la débloquer, il faut ouvrir les Services Windows (services.msc), chercher le service "Spouleur d'impression" (Print Spooler), faire un clic droit et sélectionner "Redémarrer".
+3. Si les documents restent bloqués, supprimer manuellement les fichiers temporaires dans le dossier C:\Windows\System32\spool\PRINTERS après avoir arrêté temporairement le spouleur.
+
+Compte Utilisateur Verrouillé (Active Directory) :
+1. Lorsqu'un utilisateur saisit 3 mauvais mots de passe d'affilée, son compte Windows est automatiquement verrouillé pendant 30 minutes par sécurité.
+2. Pour un déverrouillage immédiat, le technicien Helpdesk doit se connecter à la console Active Directory, rechercher le compte de l'utilisateur, aller dans l'onglet "Account" et cocher la case "Unlock account".
+3. Si l'utilisateur a oublié son mot de passe, procéder à un "Reset Password" et cocher "User must change password at next logon".
+Problème de Messagerie Outlook (Profil corrompu ou mode hors connexion) :
+1. Si Outlook refuse de s'ouvrir ou boucle sur "Chargement du profil", il faut recréer le profil Outlook. Aller dans le Panneau de configuration > Mail > Afficher les profils > Ajouter un nouveau profil.
+2. Si l'utilisateur ne reçoit plus de mails, vérifier en bas à droite d'Outlook si le statut n'est pas positionné sur "Travailler hors connexion". Si c'est le cas, aller dans l'onglet "Envoi/Réception" et décocher "Travailler hors connexion".
+3. Si l'application rame, désactiver les compléments (Add-ins) inutiles via Fichier > Options > Compléments > Compléments COM > Atteindre.
+
+Session Temporaire Windows (Profil utilisateur perdu) :
+1. Si l'utilisateur se connecte et voit un bureau vide avec le message "Vous avez été connecté avec un profil temporaire", ne surtout pas enregistrer de fichiers sur ce bureau.
+2. Redémarrer l'ordinateur 2 à 3 fois règle souvent le problème si le serveur de profils était simplement inaccessible au démarrage.
+3. Si le problème persiste, le technicien doit ouvrir l'éditeur de registre (regedit), aller sur HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList, chercher la clé se terminant par ".bak", supprimer la clé temporaire sans extension et renommer la clé ".bak" en enlevant l'extension.
+
+Problème de Connexion VPN GlobalProtect / Cisco (Télétravail) :
+1. Si le VPN refuse de se connecter, vérifier d'abord que la connexion internet locale de l'utilisateur est stable.
+2. Une cause fréquente de blocage est la désynchronisation de l'heure du PC. Aller dans les paramètres Windows > Heure et langue > Synchroniser l'horloge.
+3. Si l'erreur mentionne un problème de certificat, désinstaller l'agent VPN, vider les fichiers temporaires et réinstaller la dernière version du client VPN fournie par l'entreprise.

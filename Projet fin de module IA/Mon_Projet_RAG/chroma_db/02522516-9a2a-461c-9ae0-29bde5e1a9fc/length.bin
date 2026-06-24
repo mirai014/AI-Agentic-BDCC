@@ -1,0 +1,6 @@
+de, which is a good balance between performance and overhead
+
+    - "reduce-overhead" is a mode that reduces the overhead of python with CUDA graphs,
+      useful for small batches.  Reduction of overhead can come at the cost of more memory
+      usage, as we will cache the workspace memory required for the invocation so that we
+      do not have to reallocate it on subsequent runs.  Reduction of 
