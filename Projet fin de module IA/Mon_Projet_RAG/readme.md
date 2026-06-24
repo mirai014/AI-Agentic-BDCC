@@ -30,6 +30,9 @@ Assurez-vous d'avoir Python 3.10+ installé. Installez ensuite les dépendances 
 
 > pip install langchain langchain-groq langgraph langchain-community langchain-huggingface chromadb sentence-transformers
 
+ou bien :
+> pip install -r requirements.txt
+
 ### 2. Configuration de la clé API
 Générez une clé API sur le tableau de bord Groq Cloud et configurez-la dans votre environnement ou directement au début du fichier etape3_graphe.py :
 
